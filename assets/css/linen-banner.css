@@ -1,0 +1,91 @@
+/* --- Squalo Linen Banner Section --- */
+.linen-banner-section {
+    position: relative;
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    align-items: center; /* අකුරු සිරස් අතට මැදට ගනී */
+    background-color: #000000;
+    
+    /* මෙහිදී කළු පැහැයේ සිට විනිවිද පෙනෙන (transparent) තත්ත්වයට 
+       gradient එකක් යොදා, එයට යටින් image එක load කර ඇත. 
+    */
+    background-image: linear-gradient(to right, #000000 0%, #000000 40%, rgba(0,0,0,0) 80%), url('../images/Picture.png');
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
+    margin: 60px 0; /* උඩින් සහ යටින් ඉඩක් තැබීමට */
+}
+
+.linen-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 5%;
+    color: #ffffff;
+}
+
+.linen-content h2 {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.linen-content p {
+    font-size: 16px;
+    color: #cccccc;
+    margin-bottom: 30px;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+/* Shop Now Button */
+.btn-shop-now {
+    display: inline-block;
+    padding: 12px 35px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-shop-now:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* --- Mobile Responsiveness --- */
+
+/* Tablets */
+@media (max-width: 992px) {
+    .linen-banner-section {
+        background-position: center;
+        /* Tablet වලදී කළු gradient එක මඳක් දකුණට ගෙන යයි */
+        background-image: linear-gradient(to right, #000000 0%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0) 100%), url('assets/images/linen-banner.jpg');
+    }
+}
+
+/* Mobile Phones (අකුරු මැදට ගැනීම සහ Overlay එක වෙනස් කිරීම) */
+@media (max-width: 768px) {
+    .linen-banner-section {
+        min-height: 350px;
+        justify-content: center;
+        text-align: center;
+        /* Mobile වලදී අකුරු පැහැදිලිව පෙනීමට සම්පූර්ණ පින්තූරයම අඳුරු කරයි */
+        background-image: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 100%), url('assets/images/linen-banner.jpg');
+    }
+
+    .linen-content h2 {
+        font-size: 22px;
+    }
+
+    .linen-content p {
+        margin: 0 auto 25px auto; /* p tag එක මැදට ගැනීම */
+    }
+}

@@ -1,0 +1,137 @@
+.top-categories-section {
+    width: 100%;
+    margin: 60px 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+.categories-header {
+    margin-bottom: 25px;
+    padding: 0 5%;
+    
+}
+
+.categories-header h2 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #222;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.categories-header p {
+    font-size: 16px;
+    color: #666;
+    margin-top: 5px;
+}
+
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    background-color: #ffffff;
+}
+
+/* Individual Category Card */
+.category-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 3/4;
+    /* උස සහ පළල අතර අනුපාතය (දිගටි හැඩය) */
+    overflow: hidden;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.category-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    /* Hover කිරීමේදී smooth එකට zoom වීමට */
+    z-index: 1;
+}
+
+/* කළු පැහැති ආවරණය (Dark Overlay) අකුරු පැහැදිලිව පෙනීමට */
+.category-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    /* කළු පැහැය 30%ක් */
+    z-index: 2;
+    transition: background-color 0.3s ease;
+}
+
+/* Category Name Text */
+.category-card h3 {
+    position: relative;
+    z-index: 3;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0 10px;
+}
+
+/* --- Hover Effects --- */
+.category-card:hover img {
+    transform: scale(1.08);
+    /* පින්තූරය 8% කින් විශාල වේ */
+}
+
+.category-card:hover .category-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Hover කළ විට කළු පැහැය වැඩි වේ */
+}
+
+/* --- Mobile Responsiveness --- */
+
+/* Tablets & Small Laptops (Max 992px) */
+@media (max-width: 992px) {
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* තීරු 2ක් බවට පත්වේ */
+        gap: 2px;
+    }
+}
+
+/* Mobile Phones (Max 576px) */
+@media (max-width: 576px) {
+    .top-categories-section {
+        padding: 0;
+        /* Mobile වලදීත් padding ඉවත් කිරීම */
+    }
+
+    .categories-header {
+        padding: 0 15px;
+        /* Mobile එකේදී Heading එක සඳහා padding */
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Mobile වලදීත් 2x2 ලෙස පෙන්වීම වඩාත් අලංකාරයි */
+        gap: 2px;
+    }
+
+    .category-card {
+        aspect-ratio: 4/5;
+        /* Mobile වලදී රූපය මඳක් කොට කිරීම */
+    }
+
+    .category-card h3 {
+        font-size: 11px;
+        /* අකුරු ප්‍රමාණය කුඩා කිරීම */
+        letter-spacing: 1px;
+    }
+}
