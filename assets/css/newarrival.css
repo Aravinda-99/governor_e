@@ -1,0 +1,253 @@
+:root {
+    --heading-color: #222;
+    --text-color: #777;
+    --muted-text: #888;
+    --h2-size: 24px;
+    --p-size: 16px;
+    --h3-size: 14px;
+    --card-border: #eee;
+}
+
+/* --- New Arrivals Section --- */
+.new-arrivals-section {
+    padding: 50px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+.section-header {
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    font-size: var(--h2-size);
+    font-weight: 800;
+    color: var(--heading-color);
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.section-header p {
+    font-size: var(--p-size);
+    color: var(--text-color);
+}
+
+/* Carousel Container */
+.carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* The Scrollable Track */
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    /* Makes swiping snap to cards */
+    padding-bottom: 20px;
+    /* Space for scrollbar if visible */
+    width: 100%;
+}
+
+/* Hide scrollbar for clean look */
+.carousel-track::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-track {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Individual Product Card */
+.product-card {
+    flex: 0 0 calc(25% - 15px);
+    /* Show 4 items on Desktop */
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--card-border);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    background: #fff;
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-color: #ddd;
+}
+
+.img-container {
+    position: relative;
+    background-color: #f4f4f4;
+    width: 100%;
+    aspect-ratio: 3/4;
+    /* Maintains standard clothing aspect ratio */
+    overflow: hidden;
+}
+
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: transform 0.6s ease;
+}
+
+.product-card:hover .product-img {
+    transform: scale(1.05);
+}
+
+/* 'NEW' Badge */
+.badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #0b2a4a;
+    color: white;
+    font-size: 9px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 2px;
+    letter-spacing: 1px;
+}
+
+/* Product Info */
+.product-info {
+    background-color: #faf8f7;
+    /* Very light pink/grey */
+    padding: 20px 10px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product-info h3 {
+    font-size: var(--h3-size);
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-bottom: 5px;
+}
+
+.price {
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.installment {
+    font-size: 11px;
+    color: var(--muted-text);
+    margin-bottom: 15px;
+}
+
+/* Color Options Dots */
+.color-options {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.color-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid #ddd;
+}
+
+.color-white {
+    background-color: #ffffff;
+}
+
+.color-red {
+    background-color: #8b0000;
+}
+
+.color-black {
+    background-color: #000000;
+}
+
+.active-color {
+    outline: 1px solid #333;
+    outline-offset: 2px;
+}
+
+/* Navigation Arrows */
+.nav-btn {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #eee;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.prev-btn {
+    left: -20px;
+}
+
+.next-btn {
+    right: -20px;
+}
+
+/* Pagination Dots */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.page-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.page-dot.active {
+    background-color: #222;
+}
+
+/* --- Mobile Responsiveness (The Magic happens here) --- */
+@media (max-width: 1024px) {
+    .product-card {
+        flex: 0 0 calc(33.333% - 14px);
+        /* Show 3 items on Tablet */
+    }
+}
+
+@media (max-width: 768px) {
+    .product-card {
+        /* ජංගම දුරකථන වලදී card එකක් තිරයෙන් 80%ක් ගන්නා සේ සකසා ඇත.
+           එවිට ඊළඟ card එකේ කොටසක් පෙනෙන නිසා scroll කළ හැකි බව user ට තේරුම් යයි. */
+        flex: 0 0 80%;
+    }
+
+    .nav-btn {
+        display: none;
+        /* Mobile වලදී Arrows අත්‍යවශ්‍ය නැත, swipe කළ හැක */
+    }
+
+    .section-header {
+        text-align: center;
+    }
+}

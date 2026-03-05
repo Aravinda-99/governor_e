@@ -1,0 +1,112 @@
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-image: url('../images/back1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px 5% 20px 15%;
+    /* Added more left padding (10%) to position it nicely */
+}
+
+
+.hero-box {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 60px 40px;
+    text-align: center;
+    max-width: 450px;
+    width: 100%;
+}
+
+.hero-logo {
+    margin-bottom: 25px;
+}
+
+.hero-logo-img {
+    max-width: 80px;
+    /* Reduced since text is back */
+    height: auto;
+    display: block;
+    margin: 0 auto 15px;
+}
+
+.hero-logo h1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 32px;
+    letter-spacing: 8px;
+    font-weight: 800;
+    margin: 0;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.hero-subtitle {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    margin-bottom: 40px;
+    color: #e0e0e0;
+    text-transform: uppercase;
+}
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 35px;
+    border: 1px solid #ffffff;
+    border-radius: 30px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.hero-btn span {
+    margin-left: 8px;
+    font-size: 16px;
+}
+
+.hero-btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+
+@media (max-width: 768px) {
+    .hero-section {
+        height: 40vh;
+        background-image: url('../images/mback1.png');
+        padding: 20px 5% 20px 5%;
+    }
+
+    .hero-box {
+        padding: 40px 20px;
+        max-width: 200px;
+    }
+
+    .hero-logo-img {
+        max-width: 50px;
+    }
+
+    .hero-logo h1 {
+        font-size: 20px;
+        letter-spacing: 5px;
+    }
+
+    .hero-subtitle {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .hero-btn {
+        padding: 10px 25px;
+    }
+}

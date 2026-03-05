@@ -1,0 +1,187 @@
+/* --- Shirt Collection Section --- */
+.shirt-collection-section {
+    max-width: 1400px;
+    /* ඔබ ඉල්ලූ පරිදි උපරිම පළල */
+    margin: 20px auto;
+    padding: 0 5%;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+.collection-header {
+    margin-bottom: 20px;
+}
+
+.collection-header h2 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #222;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.collection-header p {
+    font-size: 16px;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Main Layout: 2 Columns on Desktop */
+.collection-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* කොටස් දෙකකට සමව බෙදීම */
+    gap: 30px;
+}
+
+/* Left Featured Image */
+.featured-image {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.featured-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    /* රූපය සඳහා අවම උසක් ලබා දීම */
+    min-height: 400px;
+    /* Reduced from 500px */
+}
+
+/* Right Side: 2x2 Grid for Products */
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* ඇතුළත කුඩා grid එක columns 2යි */
+    gap: 15px;
+    /* Reduced from 20px */
+}
+
+/* Individual Card Styling */
+.collection-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.collection-card .img-container {
+    position: relative;
+    background-color: #f4f4f4;
+    width: 100%;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+}
+
+.collection-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Orange Sale Badge */
+.sale-badge {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    background-color: #d35400;
+    /* තැඹිලි වර්ණය */
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 10px;
+    z-index: 2;
+    text-transform: uppercase;
+}
+
+/* Product Info text */
+.collection-card .product-info {
+    background-color: #faf8f7;
+    padding: 10px 10px;
+    /* Reduced from 15px */
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.collection-card .product-info h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.collection-card .price {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.collection-card .price del {
+    color: #888;
+    margin-right: 5px;
+    font-weight: 500;
+}
+
+.collection-card .price strong {
+    font-weight: 700;
+}
+
+.collection-card .installment {
+    font-size: 12px;
+    color: #888;
+}
+
+/* --- Mobile Responsiveness --- */
+
+/* Tablets & Small Laptops */
+@media (max-width: 992px) {
+    .collection-layout {
+        grid-template-columns: 1fr;
+        /* Columns එකක් බවට පත් කිරීම (Stack vertically) */
+    }
+
+    .featured-image img {
+        height: 500px;
+        /* Tablet වලදී රූපය මනාව පෙන්වීමට */
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 576px) {
+    .shirt-collection-section {
+        padding: 0 15px;
+        /* Mobile එකේදී space එක අඩු කිරීම */
+    }
+
+    .featured-image img {
+        height: 400px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr 1fr;
+        /* Mobile වලදීත් products 2ක් සේ පෙන්වයි (කුඩාවට) */
+        gap: 10px;
+    }
+
+    .collection-card .product-info {
+        padding: 10px 5px;
+    }
+
+    .collection-card .product-info h3 {
+        font-size: 9px;
+    }
+
+    .collection-card .price,
+    .collection-card .installment {
+        font-size: 9px;
+    }
+
+    .sale-badge {
+        font-size: 8px;
+        padding: 3px 6px;
+    }
+}

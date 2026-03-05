@@ -1,0 +1,112 @@
+/* --- Flash Sale Section --- */
+.flash-sale-section {
+    max-width: 1400px;
+    margin: 60px auto;
+    padding: 0 5%;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Flash Sale Card Styling */
+.fs-product-card {
+    /* Desktop වලදී එකවර cards 4ක් හෝ 5ක් පෙන්වීමට 20% හෝ 25% භාවිතා කළ හැක.
+       මෙහිදී එකවර 4ක් මනාව පෙනෙන සේ 25% යොදා ඇත. */
+    flex: 0 0 calc(25% - 15px); 
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    background-color: #faf8f7;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+}
+
+.fs-product-card .img-container {
+    position: relative;
+    background-color: #f0f0f0;
+    width: 100%;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+}
+
+.fs-product-card .product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+/* Orange Sale Badge */
+.fs-sale-badge {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    background-color: #d35400; /* තැඹිලි/රතු වර්ණය */
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 8px;
+    z-index: 2;
+    text-transform: uppercase;
+}
+
+/* Product Info & Pricing */
+.fs-product-card .product-info {
+    padding: 15px 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.fs-product-card .product-info h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.fs-price {
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.installment {
+    font-size: 13px;
+    color: #888;
+}
+
+.fs-price strong {
+    color: #000; /* නව මිල තදින් */
+    font-weight: 700;
+}
+
+.fs-price del {
+    color: #888; /* පරණ මිල අළු පැහැයෙන් සහ කපා හැර ඇත */
+    margin-left: 5px;
+}
+
+.color-blue { background-color: #d1e2ec; }
+
+/* --- Mobile Responsiveness --- */
+
+/* Tablets (1024px දක්වා) */
+@media (max-width: 1024px) {
+    .fs-product-card {
+        flex: 0 0 calc(33.333% - 14px); /* Cards 3ක් පෙන්වයි */
+    }
+}
+
+/* Mobile Phones (768px දක්වා) */
+@media (max-width: 768px) {
+    .flash-sale-section {
+        padding: 0 15px;
+    }
+
+    .fs-product-card {
+        /* ජංගම දුරකථන වලදී card එකක් තිරයෙන් 80%ක් ගන්නා සේ සකසා ඇත.
+           මෙයින් ඊළඟ card එක පෙනෙන නිසා Swipe කිරීමට පහසු වේ. */
+        flex: 0 0 80%; 
+    }
+}
