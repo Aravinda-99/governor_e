@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="assets/css/linen-banner.css">
     <link rel="stylesheet" href="assets/css/flash-sale.css">
     <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/t-shirt.css">
     <!-- Animate.css Library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <!-- AOS Library -->
@@ -41,12 +42,12 @@
                 <svg viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18" stroke-linecap="round"/></svg>
             </button>
 
-            <a href="#" class="logo">GOVERNOR</a>
+            <a href="index.php" class="logo">GOVERNOR</a>
 
             <ul class="nav-links" id="navLinks">
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">T SHIRTS <i>⌵</i></a></li>
-                <li><a href="#">SHIRTS <i>⌵</i></a></li>
+                <li><a href="index.php">HOME</a></li>
+                <li><a href="t-shirt.php">T SHIRTS <i>⌵</i></a></li>
+                <li><a href="shirt.php">SHIRTS <i>⌵</i></a></li>
                 <li><a href="#" class="contact-us">CONTACT US</a></li>
             </ul>
 

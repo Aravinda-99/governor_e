@@ -183,13 +183,13 @@
     </div>
 
     <div class="categories-grid">
-        <a href="#" class="category-card" data-aos="fade-up" data-aos-delay="100">
+        <a href="shirt.php" class="category-card" data-aos="fade-up" data-aos-delay="100">
             <img src="assets/images/category/ct1.png" alt="Long Sleeve Shirts">
             <div class="category-overlay"></div>
             <h3>LONG SLEEVE SHIRTS</h3>
         </a>
 
-        <a href="#" class="category-card" data-aos="fade-up" data-aos-delay="200">
+        <a href="t-shirt.php" class="category-card" data-aos="fade-up" data-aos-delay="200">
             <img src="assets/images/category/ct2.png" alt="Polo Tees">
             <div class="category-overlay"></div>
             <h3>POLO TEES</h3>
